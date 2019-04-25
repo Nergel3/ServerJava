@@ -1,7 +1,5 @@
 package iut.rt.hachettp;
 
-import java.io.File;
-
 /**
  * Le code ci-dessous correspont au code de la classe abstraite Methode.
  * 

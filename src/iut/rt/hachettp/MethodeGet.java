@@ -54,7 +54,6 @@ public class MethodeGet extends Methode {
 							l_agent = valeur.trim();
 						}
 						else {
-							System.out.println("Problème 2");
 							throw new BadReqHTTP("ERROR 400 Requête mal formée");
 						}
 					} 
@@ -111,6 +110,7 @@ public class MethodeGet extends Methode {
 		File f = new File(Serveur.root,l_url);
 		
 		if(!f.exists()) {
+			f = new File(Serveur.root, "error404.html");
 			r = new Rep404(f);
 		} else {
 			if (f.isDirectory()){
@@ -118,6 +118,7 @@ public class MethodeGet extends Methode {
 			} if (f.exists()) {
 				r = new Rep200(f);
 			} else {
+				f = new File(Serveur.root, "error404.html");
 				r = new Rep404(f);
 			}
 		}

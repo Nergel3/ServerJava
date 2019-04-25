@@ -65,9 +65,11 @@ public class Client {
 		}
 	}
 	
+	
+	//Traitement du client. Appel d'autre methode --> lecture et analyse de la requête puis envoi la réponse correspondante.
+	
 	public  void traiter() throws HTTPException {
 		
-		System.out.println("traitement du client");
 		try {
 			lecture_requete();
 			la_requete.traiter();
@@ -78,6 +80,8 @@ public class Client {
 			System.out.println(error);
 		}
 	}
+	
+	//Lecture du socket, de la requête.
 	
 	public void lecture_requete() throws HTTPException, IOException {
 		String ligne;
@@ -99,6 +103,8 @@ public class Client {
 		}
 	}
 	
+	//Envoie de la réponse sur le socket.
+	
 	private void envoi(Response r) throws HTTPException {
 		
 		String newLine = System.getProperty("line.separator");
@@ -111,14 +117,12 @@ public class Client {
 			
 			String rep;
 			String contenu = new String(r.getContenu());
-			int lengthRep = contenu.length();
+			byte[] lengthRep = contenu.getBytes();
 			
-			rep = r.toString() + lengthRep + newLine + contenu;
-			System.out.println(rep);
-			BW.write(contenu);
-			
-			//OSW.close();
-			//BW.close();
+			rep = r.toString() + lengthRep.length + newLine + newLine + contenu;
+			BW.write(rep);
+			BW.flush();
+
 			liberation();
 		} 
 		
@@ -127,10 +131,11 @@ public class Client {
 		}
 	}
 	
+	//Libération du socket
+	
 	private void liberation() {
 		try {
 			socket.close();
-			System.out.println("Fini");
 		} catch (IOException e) {
 			
 		}

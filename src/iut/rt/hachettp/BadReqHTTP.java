@@ -1,6 +1,6 @@
 package iut.rt.hachettp;
 /**
- * Le code ci-dessous correspont au code de la classe serveur.
+ * Le code ci-dessous correspont au code de l'exception mauvaise requete http.
  * 
  * @author Alexandre Negrel
  * @date 21/03/2019

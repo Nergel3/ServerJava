@@ -1,5 +1,12 @@
 package iut.rt.hachettp;
 
+/**
+ * Le code ci-dessous correspont au code de la classe reponse 505.
+ * 
+ * @author Alexandre Negrel
+ * @date 08/03/2019
+ */
+
 public class Rep505 extends Response {
 
 	public Rep505() {

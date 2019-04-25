@@ -18,6 +18,8 @@ public  abstract class Response {
 	protected String[] rep;
 	protected File page;
 	
+	//Renvoie sous forme de String l'en-tête de la reponse
+	
 	public String toString() {
 		
 		SimpleDateFormat dateFormat;

@@ -1,5 +1,7 @@
 package iut.rt.hachettp;
 
+//Lance le serveur
+
 public class LeTest {
 
 	public LeTest() {

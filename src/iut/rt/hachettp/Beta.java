@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 
 import iut.rt.hachettp.MethodeGet;
 
+//Test JUnit
+
 public class Beta {
 	@Test
 	public void test1() throws HTTPException{
